@@ -1,6 +1,6 @@
 import { useMemo, useState } from 'react'
 import {
-  ArrowDown, ArrowLeft, ArrowRight, ArrowUpRight, BriefcaseBusiness,
+  ArrowDown, ArrowRight, ArrowUpRight, BriefcaseBusiness,
   Building2, Check, ChevronDown, Compass, MapPin, Menu, Search,
   ShieldCheck, Sparkles, UsersRound, Wrench, X,
 } from 'lucide-react'
@@ -13,7 +13,7 @@ const copy = {
     tagline: 'আপনার চারপাশের সবকিছু, হাতের নাগালে।', location: 'আপনার এলাকা', searchPlaceholder: 'কী খুঁজছেন? চাকরি, সেবা, দোকান...',
     search: 'খুঁজুন', discover: 'আপনার এলাকার নতুন সুযোগ', heroTitleA: 'কাছেই আছে', heroTitleB: 'আপনার পরের সুযোগ।',
     heroDescription: 'কুলাউরার চাকরি, বিশ্বস্ত সেবা আর পছন্দের স্থানীয় ব্যবসা—সব এক জায়গায়।', explore: 'সুযোগগুলো দেখুন', howItWorks: 'কীভাবে কাজ করে', demo: 'ডেমো অভিজ্ঞতা', demoNote: 'এখানে দেখানো পোস্টগুলো নমুনা—বাস্তব বিজ্ঞাপন নয়।',
-    quickTitle: 'আপনি কী খুঁজছেন?', quickSub: 'আপনার দরকারের পথটি বেছে নিন।', jobs: 'চাকরি', jobsSub: 'স্থানীয় কাজ ও ক্যারিয়ার', services: 'সেবা', servicesSub: 'দক্ষ মানুষ, কাছেই', businesses: 'স্থানীয় ব্যবসা', businessesSub: 'আপনার এলাকার পছন্দের দোকান',
+    quickTitle: 'আপনি কী খুঁজছেন?', quickSub: 'আপনার দরকারের পথটি বেছে নিন।', jobs: 'চাকরি', jobsSub: 'স্থানীয় কাজ ও ক্যারিয়ার', services: 'সেবা', servicesSub: 'দক্ষ মানুষ, কাছেই', businesses: 'স্থানীয় ব্যবসা', businessesSub: 'আপনার এলাকার প���ন্দের দোকান',
     fresh: 'কুলাউরায় নতুন', seeAll: 'সব দেখুন', all: 'সব', recent: 'সাম্প্রতিক সুযোগ', demoPill: 'নমুনা', fullTime: 'পূর্ণকালীন', partTime: 'খণ্ডকালীন', contract: 'চুক্তিভিত্তিক', salary: 'বেতন', negotiable: 'আলোচনা সাপেক্ষে',
     verified: 'পরিচয় যাচাইকৃত', viewListing: 'বিস্তারিত দেখুন', noResults: 'এই খোঁজে কিছু পাওয়া যায়নি। অন্য শব্দ দিয়ে চেষ্টা করুন।', statsA: 'স্থানীয় সুযোগ', statsB: 'তিনটি বিভাগ', statsC: 'আপনার পাশেই', trustTitle: 'নিরাপদে খুঁজুন।', trustText: 'চাকরির জন্য আগে টাকা দেবেন না। সন্দেহজনক কিছু দেখলে রিপোর্ট করুন।', safety: 'নিরাপত্তা টিপস', join: 'আপনার সুযোগ শেয়ার করুন', joinText: 'আপনি কি স্থানীয় চাকরি দিচ্ছেন, সেবা দিচ্ছেন, বা ব্যবসা চালাচ্ছেন?', addDemo: 'শিগগিরই আসছে', footerLine: 'বাংলাদেশের স্থানীয় সুযোগ, সবার জন্য।',
     navExplore: 'এক্সপ্লোর', navJobs: 'চাকরি', navServices: 'সেবা', navBusinesses: 'ব্যবসা', navSaved: 'সংরক্ষিত', soon: 'শিগগিরই',
@@ -30,7 +30,7 @@ const copy = {
 }
 
 const listings = [
-  { id: 1, type: 'jobs' as const, categoryBn: 'চাকরি', categoryEn: 'JOB', titleBn: 'সেলস অ্যাসোসিয়েট', titleEn: 'Sales Associate', orgBn: 'নূর ফ্যাশন হাউস', orgEn: 'Noor Fashion House', locationBn: 'স্টেশন রোড, কুলাউরা', locationEn: 'Station Road, Kulaura', salaryBn: '৳১২,০০০–১৬,���০০ / মাস', salaryEn: '৳12,000–16,000 / month', timing: 'fullTime' as const, icon: BriefcaseBusiness, color: 'mint', initials: 'নূ', postedBn: '২ ঘণ্টা আগে', postedEn: '2 hours ago' },
+  { id: 1, type: 'jobs' as const, categoryBn: 'চাকরি', categoryEn: 'JOB', titleBn: 'সেলস অ্যাসোসিয়েট', titleEn: 'Sales Associate', orgBn: 'নূর ফ্যাশন হাউস', orgEn: 'Noor Fashion House', locationBn: 'স্টেশন রোড, কুলাউরা', locationEn: 'Station Road, Kulaura', salaryBn: '৳১২,০০০–১৬,০০০ / মাস', salaryEn: '৳12,000–16,000 / month', timing: 'fullTime' as const, icon: BriefcaseBusiness, color: 'mint', initials: 'নূ', postedBn: '২ ঘণ্টা আগে', postedEn: '2 hours ago' },
   { id: 2, type: 'services' as const, categoryBn: 'সেবা', categoryEn: 'SERVICE', titleBn: 'বাসা ও অফিসের ইলেকট্রিক কাজ', titleEn: 'Home & office electrical work', orgBn: 'রহিম ইলেকট্রিক সার্ভিস', orgEn: 'Rahim Electric Service', locationBn: 'কুলাউরা পৌরসভা', locationEn: 'Kulaura Municipality', salaryBn: 'কাজ অনুযায়ী', salaryEn: 'Price per job', timing: 'contract' as const, icon: Wrench, color: 'lavender', initials: 'র', postedBn: '৫ ঘণ্টা আগে', postedEn: '5 hours ago' },
   { id: 3, type: 'jobs' as const, categoryBn: 'চাকরি', categoryEn: 'JOB', titleBn: 'জুনিয়র হিসাব সহকারী', titleEn: 'Junior Accounts Assistant', orgBn: 'গ্রিনলিফ ট্রেডার্স', orgEn: 'Greenleaf Traders', locationBn: 'কুলাউরা বাজার', locationEn: 'Kulaura Bazar', salaryBn: '৳১০,০০০–১৪,০০০ / মাস', salaryEn: '৳10,000–14,000 / month', timing: 'partTime' as const, icon: BriefcaseBusiness, color: 'peach', initials: 'গ', postedBn: '১ দিন আগে', postedEn: '1 day ago' },
   { id: 4, type: 'businesses' as const, categoryBn: 'ব্যবসা', categoryEn: 'LOCAL BUSINESS', titleBn: 'শাহীন বুক কর্নার', titleEn: 'Shaheen Book Corner', orgBn: 'বই, স্টেশনারি ও প্রিন্ট', orgEn: 'Books, stationery & printing', locationBn: 'কলেজ রোড, কুলাউরা', locationEn: 'College Road, Kulaura', salaryBn: 'আজ খোলা · রাত ৯টা পর্যন্ত', salaryEn: 'Open today · until 9 PM', timing: 'contract' as const, icon: Building2, color: 'blue', initials: 'শা', postedBn: 'গতকাল', postedEn: 'Yesterday' },
@@ -77,7 +77,7 @@ function App() {
           <button className="nav-link" onClick={() => chooseCategory('businesses')}>{t.navBusinesses}</button>
         </nav>
         <div className="header-actions">
-          <button className="language-switch" onClick={() => setLanguage(isBn ? 'en' : 'bn')} aria-label={isBn ? 'Switch to English' : 'বাংলায় পরিবর্তন করুন'}><span>{isBn ? 'EN' : 'বাং'}</span><ArrowDown size={13} /></button>
+          <button className="language-switch" onClick={() => setLanguage(isBn ? 'en' : 'bn')} aria-label={isBn ? 'Switch to English' : 'বাংলায় পরিবর্তন করুন'}><span>{isBn ? 'EN' : 'বাং'}</span><ChevronDown size={13} /></button>
           <button className="header-cta" onClick={notifySoon}><span>{t.join}</span><ArrowUpRight size={16} /></button>
           <button className="menu-button" onClick={() => setMenuOpen(!menuOpen)} aria-label={menuOpen ? 'Close menu' : 'Open menu'}>{menuOpen ? <X size={21} /> : <Menu size={21} />}</button>
         </div>
@@ -123,7 +123,7 @@ function App() {
             <div className="listing-grid">
               {filteredListings.map((item) => {
                 const Icon = item.icon
-                return <article className="listing-card" key={item.id}><div className="listing-top"><span className={`listing-avatar ${item.color}`}><Icon size={20} /><i>{item.initials}</i></span><span className="listing-category">{isBn ? item.categoryBn : item.categoryEn}</span><span className="demo-label">{t.demoPill}</span></div><h3>{isBn ? item.titleBn : item.titleEn}</h3><p className="listing-company">{isBn ? item.orgBn : item.orgEn}<span className="verified-check" title={t.verified}><Check size={10} /></span></p><div className="listing-meta"><span><MapPin size={13} />{isBn ? item.locationBn : item.locationEn}</span><span><BriefcaseBusiness size={13} />{t[item.timing]}</span></div><div className="listing-bottom"><strong>{isBn ? item.salaryBn : item.salaryEn}</strong><span>{isBn ? item.postedBn : item.postedEn}</span></div><button className="listing-open" onClick={notifySoon} aria-label={`${t.viewListing}: ${isBn ? item.titleBn : item.titleEn}`}><ArrowUpRight size={17} /></button></article>
+                return <article className="listing-card" key={item.id}><div className="listing-top"><span className={`listing-avatar ${item.color}`}><Icon size={20} /><i>{item.initials}</i></span><span className="listing-category">{isBn ? item.categoryBn : item.categoryEn}</span><span className="demo-label">{t.demoPill}</span></div><h3>{isBn ? item.titleBn : item.titleEn}</h3><p className="listing-company">{isBn ? item.orgBn : item.orgEn}<span class="verified-check" title={t.verified}><Check size={10} /></span></p><div className="listing-meta"><span><MapPin size={13} />{isBn ? item.locationBn : item.locationEn}</span><span><BriefcaseBusiness size={13} />{t[item.timing]}</span></div><div className="listing-bottom"><strong>{isBn ? item.salaryBn : item.salaryEn}</strong><span>{isBn ? item.postedBn : item.postedEn}</span></div><button className="listing-open" onClick={notifySoon} aria-label={`${t.viewListing}: ${isBn ? item.titleBn : item.titleEn}`}><ArrowUpRight size={17} /></button></article>
               })}
               {filteredListings.length === 0 && <div className="empty-state"><Search size={24} /><p>{t.noResults}</p><button onClick={() => { setSearch(''); setCategory('all') }}>{t.seeAll}</button></div>}
             </div>
